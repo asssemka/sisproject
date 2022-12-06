@@ -1,9 +1,244 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th = "http://www.thymeleaf.org"
-            xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
-            xmlns:layout = "http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layout/main.html">
-
-    <div layout:fragment="content">
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Skin by Kim</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <!-- <style>
+        @font-face{
+          font-family: 'Suisse Intl';
+        }
+    </style> -->
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: white;">
+    <div class="container-fluid">
+        <!--        <img src="skkn.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">-->
+        <a class="navbar-brand" href="#">SKKN BY KIM</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" >SKINCARE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" >THE COMPLETE COLLECTION</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" >BUNDLES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">REFILLS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" >HOME ACCESSORIES </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" >SUBSCRIPTIONS </a>
+                </li>
+            </ul>
+        </div>
     </div>
+</nav>
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://cdn.shopify.com/s/files/1/0612/9893/3944/files/DeskTop_ebc0754c-63ef-4106-a1ec-9a70f18fe308_2880x1616_crop_center.jpg?v=1669065161" class="d-block w-100" alt="...">
+
+            <div class="container">
+                <div class="carousel-caption text-start">
+                    <h1>Home Accessories</h1>
+                    <h1>Now Available</h1>
+                    <p><a class="btn btn-lg btn-light" href="#">SHOP NOW</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="https://cdn.shopify.com/s/files/1/0612/9893/3944/files/KKS_22_KIM_KARDASHIAN_02_0148_JPEG_16x9_144DPI_2880x1616_crop_center.jpg?v=1664393059" class="d-block w-100" alt="...">
+
+            <div class="container">
+                <div class="carousel-caption text-start">
+                    <h1>Discover your best SKKN</h1>
+                    <p><a class="btn btn-lg btn-light" href="#">SHOP NOW</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<!-- <img src="https://cdn.shopify.com/s/files/1/0612/9893/3944/files/DeskTop_ebc0754c-63ef-4106-a1ec-9a70f18fe308_2880x1616_crop_center.jpg?v=1669065161" alt="" width="1700px"> -->
+
+<div style="margin-top: 100px;">
+    <div class="container" style="display: flex; flex-direction:row;">
+        <div><img src="https://cdn.shopify.com/s/files/1/0612/9893/3944/files/IMG_0097_1200x1600_crop_center.jpg?v=1664470618" class="rounded float-start" alt="..." width="700"></div>
+        <div style="margin-left:20px;"><p class="text-right">A NEW ERA OF SKINCARE
+            Introducing an innovative line of uncompromising skincare developed by Kim Kardashian. Through a visionary nine-product ritual, SKKN BY KIM delivers nourishment, renewal, and an indulgent at-home experience.</p>
+            <button class="btn" style="background-color: black; color: white">Read more</button></div>
+    </div>
+</div>
+
+<div class="album py-5 bg-light" style="margin:50px; margin-top:150px;">
+    <div class="row">
+        <div class="col-6">
+            <div class="card" style="width: 18rem;">
+                <img src="https://cdn.shopify.com/s/files/1/0612/9893/3944/files/SKKN_KKS_FULL-COLLECTION_22_STILLLIFE_4_3x4_144_DPI_52aa138e-1097-48b4-b2fc-33d1b5ec9627_800x1066_crop_center.jpg?v=1655232599" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <a href="#" class="btn btn-primary" style="background-color: black; color: white">ADD TO BAG</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card" style="width: 18rem;">
+                <img src="https://cdn.shopify.com/s/files/1/0612/9893/3944/files/skkn_288235240_145621321396029_6852433104964262088_n_2ddd7cd0-3e57-4984-80fd-a25378077977_800x1066_crop_center.jpg?v=1655857358" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <a href="#" class="btn btn-primary" style="background-color: black; color: white">ADD TO BAG</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card" style="width: 18rem;">
+                <img src="https://cdn.shopify.com/s/files/1/0612/9893/3944/files/SKKN_KKS_FPCLEAN_TPR_FCMOIST_22_STILLLIFE_3x4_144_DPI_sf_800x1066_crop_center.jpg?v=1655764104" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <a href="#" class="btn btn-primary" style="background-color: black; color: white">ADD TO BAG</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container" style="margin-top: 100px;">
+    <div class="container" style="display: flex; flex-direction:row;">
+        <div><img src="https://cdn.shopify.com/s/files/1/0612/9893/3944/files/KKS_22_KIM_KARDASHIAN_HUGH_01_0067_J_JPEG_3x4_144DPI_900x1200_crop_center.jpg?v=1664472853" class="rounded float-end" alt="..." width="700"></div>
+        <div style="margin-left:20px;"><p class="text-left">RADIANCE, BOTTLED
+            With a focus on quality and efficacy, SKKN BY KIM's science-backed, clean formulas deliver targeted rejuvenation. Crafted for conscious consumers, each product is cruelty-free, vegan, and formulated without gluten, sulfates, BHT, and PEGs.</p>
+            <button class="btn" style="background-color: black; color: white">SHOP SKINCARE</button></div>
+    </div>
+</div>
+
+<div align="center" style="margin:150px; margin-top:50px;">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <img src="https://cdn.shopify.com/s/files/1/0612/9893/3944/files/SKKN_KKS_22_STILL_LIFE_JONG_RGB_16x9_JPEG_144DPI_CP_52_1200x812_crop_center.jpg?v=1664470789" class="" alt=" " width="500">
+                    <h5 class="card-title">NEUTRAL ACCENTS</h5>
+                    <p class="card-text">Transform your home into a sanctuary with sculptural decor</p>
+                    <a href="#" class="btn btn-primary" style="background-color: black; color: white">HOME ACCESSORIES</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <img src="https://cdn.shopify.com/s/files/1/0612/9893/3944/files/SKKN_KKS_FULL-COLLECTION_RF_22_STILLLIFE_6x4_JPEG_144dpi_1200x812_crop_center.jpg?v=1655232598" class="" alt=" " width="500">
+                    <h5 class="card-title">REDUCE, REUSE, REFILL</h5>
+                    <p class="card-text">Eco-friendly Refills extend the life cycle of our products</p>
+                    <a href="#" class="btn btn-primary" style="background-color: black; color: white">REFILLS</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="margin:100px; margin-top:50px;">
+    <div class="row" style="display:grid ; grid-template-columns:repeat(4, 400px)">
+        <div class="col-sm-6">
+            <div class="">
+                <div class="">
+                    <img src="https://cdn.shopify.com/s/files/1/0612/9893/3944/files/KKS_22_Model_11_Monica_FCMOIST_1194_RGB_3x4_JPEG_144_DPI_660x920_crop_center.jpg?v=1655232598" class="" alt=" " width="300">
+                    <h3 class="card-text">EXFOLIATOR</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="">
+                <div class="">
+                    <img src="https://cdn.shopify.com/s/files/1/0612/9893/3944/files/KKS_22_Model_08_River_NOILRT_OILDCVG_0831_RGB_3x4_JPEG_144_DPI_f90b965f-1746-4574-ac2c-1a01afa8f6a1_540x753_crop_center.jpg?v=1655232599" class="" alt=" " width="300">
+                    <h3 class="card-text">OIL DROPS</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="">
+                <div class="">
+                    <img src="https://cdn.shopify.com/s/files/1/0612/9893/3944/files/KKS_22_Model_09_Sydney_FPCLEAN_0952_RGB_3x4_JPEG_144_DPI_da958590-73dd-4ac9-91d7-0b3e855b7d08_540x753_crop_center.jpg?v=1655232599" class="" alt=" " width="300">
+                    <h3 class="card-text">CLEANSER</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="">
+                <div class="">
+                    <img src="https://cdn.shopify.com/s/files/1/0612/9893/3944/files/KKS_22_Model_06_Angela_VITC8_OILDCVG_FCMOIST_0720_RGB_3x4_JPEG_JPEG_144_DPI_62c2883d-8baa-414d-aa8e-8756bc06fa63_540x753_crop_center.jpg?v=1655232599" class="" alt=" " width="300">
+                    <h3 class="card-text">EYE CREAM</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<h3 style="margin: 20px; margin-right:100px;">SHOP THE FEED</h3>
+<footer class="py-5" style="background-color: rgb(241, 238, 238);">
+    <div class="row">
+        <div class="col-6 col-md-2 mb-3" style="margin-left: 50px;">
+            <h5 style="color:rgb(9, 9, 9)">SUPPORT</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQS</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">TRACK ORDER</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">SHIPPING</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">ACCESSIBILITY</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">CONTACT US</a></li>
+            </ul>
+        </div>
+
+        <div class="col-6 col-md-2 mb-3">
+            <h5 style="color:rgb(9, 9, 9)">SKKN BY KIM</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">ABOUT US</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">SUBSCRIPTIONS</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">TUTORIALS</a></li>
+            </ul>
+        </div>
+
+        <div class="col-6 col-md-2 mb-3">
+            <h5 style="color:rgb(9, 9, 9)">CONNECT</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">INSTAGRAM</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FACEBOOK</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">TWITTER</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">YOUTUBE</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">TIKTOK</a></li>
+            </ul>
+        </div>
+
+        <div class="col-6 col-md-2 mb-3">
+            <ul class="nav flex-column">
+                <div style="display:inline-block; font-size: 20px;color:rgb(9, 9, 9) ">
+                    <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/>
+                    <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                    </svg></div>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"></a></li>
+            </ul>
+        </div>
+
+</footer>
+</body>
 </html>
