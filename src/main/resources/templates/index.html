@@ -57,34 +57,17 @@
     </div>
 </div>
 
-<div class="album py-5 bg-light" style="margin:50px; margin-top:150px;">
-    <div class="row">
-        <div class="col-6">
-            <div class="card" style="width: 18rem;">
-                <img src="https://cdn.shopify.com/s/files/1/0612/9893/3944/files/SKKN_KKS_FULL-COLLECTION_22_STILLLIFE_4_3x4_144_DPI_52aa138e-1097-48b4-b2fc-33d1b5ec9627_800x1066_crop_center.jpg?v=1655232599" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <a href="#" class="btn btn-primary" style="background-color: black; color: white">ADD TO BAG</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-6">
-            <div class="card" style="width: 18rem;">
-                <img src="https://cdn.shopify.com/s/files/1/0612/9893/3944/files/skkn_288235240_145621321396029_6852433104964262088_n_2ddd7cd0-3e57-4984-80fd-a25378077977_800x1066_crop_center.jpg?v=1655857358" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <a href="#" class="btn btn-primary" style="background-color: black; color: white">ADD TO BAG</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-6">
-            <div class="card" style="width: 18rem;">
-                <img src="https://cdn.shopify.com/s/files/1/0612/9893/3944/files/SKKN_KKS_FPCLEAN_TPR_FCMOIST_22_STILLLIFE_3x4_144_DPI_sf_800x1066_crop_center.jpg?v=1655764104" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <a href="#" class="btn btn-primary" style="background-color: black; color: white">ADD TO BAG</a>
-                </div>
-            </div>
+<div class="container" style="display: grid; grid-template-columns: repeat(4, 300px); grid-column-gap:30px;
+margin-bottom: 40px">
+    <div class="card" style="width: 13rem;" th:each="product: ${products}">
+        <img th:src="${product.getImage()}"  class="card-img-top" alt="">
+        <div class="card-body">
+            <bold class="card-title" th:text="${product.getProductname()}"></bold>
+            <b><h5 th:text="${product.getPrice()}"></h5></b>
+            <h6 th:text="${product.getStar()}"></h6>
+            <h6 th:text="${product.category.getName()}"></h6>
+            <a th:href="@{/product/update/{id} (id=${product.getId()})}" class="btn btn-dark">EDIT</a>
+            <a th:href="@{product/delete/{id}(id=${product.getId()})}" class="btn btn-light">DELETE</a>
         </div>
     </div>
 </div>
