@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th = "http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
       xmlns:layout = "http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layout/main.html">
-
+<div th:insert="navbar.html :: header"></div>
     <div layout:fragment="content">
         <div class="row mt-3">
             <div class="col-6 mx-auto">
