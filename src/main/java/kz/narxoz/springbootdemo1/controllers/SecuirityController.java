@@ -55,4 +55,9 @@ public class SecuirityController {
     }
     return "redirect:/signup?error";
   }
+
+  @GetMapping("/403")
+  public String err(){
+    return "403";
+  }
 }

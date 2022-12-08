@@ -26,7 +26,7 @@
 </head>
 <h1 style="color: white">ASDFGHJKL</h1>
 <body>
-<form th:action="@{'/products'}" th:object="${product}" method="POST">
+<form th:action="@{'/products'}" th:object="${product}" method="POST" enctype="multipart/form-data">
     <div class="form-group">
         <div class="container mt-3">
             <div class="row">
@@ -35,7 +35,7 @@
                     <input
                             type="text"
                             name="productname"
-                            th:field="*{productname}"
+
                             class="form-control"
                             placeholder="Enter First Name"
                     />
@@ -44,7 +44,7 @@
                         <input
                                 type="text"
                                 name="description"
-                                th:field="*{description}"
+
                                 class="form-control"
                                 placeholder="Enter First Name"
                         />
@@ -55,7 +55,7 @@
                         <input
                                 type="text"
                                 name="price"
-                                th:field="*{price}"
+
                                 class="form-control"
                                 placeholder="Enter First Name"
                         />
@@ -66,22 +66,31 @@
                         <input
                                 type="text"
                                 name="star"
-                                th:field="*{star}"
+
                                 class="form-control"
                                 placeholder="Enter First Name"
                         />
 
                     </div>
+                    <div class="row mt-2">
+                        <div class="col-12">
+                            <select name="category_id" class="form-control">
+                                <option th:each="category: ${categories}"
+                                        th:text="${category.getName()}"
+                                        th:value="${category.getId()}"></option>
+                            </select>
+                        </div>
+                    </div>
                     <div>
-                        <label>Student image</label>
+                        <label>Image</label>
                         <input
-                                type="text"
+                                type="file"
                                 name="image"
-                                th:field="*{image}"
-                                class="form-control"
-                                placeholder="Enter First Name"
-                        />
 
+                                class="form-control form-control-sm"
+
+                                id="formFileSm"
+                        />
                     </div>
                     <br>
                     <div class="box-footer">

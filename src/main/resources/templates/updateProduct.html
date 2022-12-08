@@ -27,7 +27,7 @@
 <h1 style="color: white">ASDFGHJKL</h1>
 </head>
 <body>
-<form method="POST" th:action="@{/product/update/{id} (id=${product.getId()})}" th:object="${product}">
+<form method="POST" th:action="@{/product/update/{id} (id=${product.getId()})}" th:object="${product}" enctype="multipart/form-data">
     <div class="form-group">
         <div class="container mt-3">
             <div class="row">
@@ -73,16 +73,25 @@
                         />
 
                     </div>
+                    <div class="row mt-2">
+                        <div class="col-12">
+                            <select name="category_id" class="form-control">
+                                <option th:each="category: ${categories}"
+                                        th:text="${category.getName()}"
+                                        th:value="${category.getId()}"></option>
+                            </select>
+                        </div>
+                    </div>
                     <div>
-                        <label> Image</label>
+                        <label>Image</label>
                         <input
-                                type="text"
+                                type="file"
                                 name="image"
+                                class="form-control form-control-sm"
+                                id="formFileSm"
                                 th:field="*{image}"
-                                class="form-control"
-                                placeholder="Enter First Name"
-                        />
 
+                        />
                     </div>
                     <br>
                     <div class="box-footer">
@@ -97,6 +106,7 @@
                 </div>
             </div>
         </div>
+    </div>
 </form>
 
 

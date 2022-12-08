@@ -40,7 +40,7 @@
     <div class="container" style="display: grid; grid-template-columns: repeat(4, 300px); grid-column-gap:30px;
 margin-bottom: 40px">
         <div class="card" style="width: 13rem;" th:each="product: ${products}">
-            <img th:src="${product.getImage()}"  class="card-img-top" alt="">
+            <img th:src="@{'/img/'+${product.getImage()}}"  class="card-img-top" alt="img">
             <div class="card-body">
                 <bold class="card-title" th:text="${product.getProductname()}"></bold>
                 <b><h5 th:text="${product.getPrice()}"></h5></b>
