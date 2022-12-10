@@ -8,20 +8,19 @@
 <body>
 <div th:insert="navbar.html :: header"></div>
 
-    <div class="container" style="display: grid; grid-template-columns: repeat(3, 450px); grid-column-gap:30px;
+<div class="container" style="display: grid; grid-template-columns: repeat(3, 450px); grid-column-gap:30px;
 margin-bottom: 40px; margin: 60px">
-        <div class="card" style="width: 25rem;" th:each="product: ${products}">
-            <img th:src="@{'/img/'+${product.getImage()}}"  class="card-img-top" alt="img">
-            <div class="card-body">
-                <bold class="card-title" th:text="${product.getProductname()}"></bold>
-                <b><h5 th:text="${product.getPrice()}"></h5></b>
-                <h6 th:text="${product.getStar()}"></h6>
-                <h6 th:text="${product.category.getName()}"></h6>
-                <a th:href="@{/product/update/{id} (id=${product.getId()})}" class="btn btn-dark">EDIT</a>
-                <a th:href="@{product/delete/{id}(id=${product.getId()})}" class="btn btn-light">DELETE</a>
-            </div>
+    <div class="card" style="width: 25rem;" th:each="product: ${products}">
+        <img th:src="@{'/img/'+${product.getImage()}}"  class="card-img-top" alt="img">
+        <div class="card-body">
+            <bold class="card-title" th:text="${product.getProductname()}"></bold>
+            <b><h5 th:text="${product.getPrice()}"></h5></b>
+            <h6 th:text="${product.getStar()}"></h6>
+            <h6 th:text="${product.category.getName()}"></h6>
+            <a th:href="@{/buy}" class="btn btn-dark">BUY</a>
         </div>
     </div>
+</div>
 <!--    <table class="table table-striped">-->
 <!--        <thead class="table-light">-->
 <!--        <tr>-->

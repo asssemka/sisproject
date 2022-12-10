@@ -1,7 +1,6 @@
 package kz.narxoz.springbootdemo1.controllers;
 import kz.narxoz.springbootdemo1.Entity.Category;
 import kz.narxoz.springbootdemo1.Entity.Product;
-import kz.narxoz.springbootdemo1.repository.CategoryRepository;
 import kz.narxoz.springbootdemo1.service.CategoryService;
 import kz.narxoz.springbootdemo1.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +38,23 @@ public class ProductController {
     model.addAttribute("products", productService.findAllProduct());
     model.addAttribute("categories", categoryService.findAllCategory());
     return "products";
+  }
+  @GetMapping("/buy")
+  public String buy(){
+    return "buy";
+  }
+  @GetMapping("/allproducts")
+  public String all(Model model) {
+    model.addAttribute("products", productService.findAllProduct());
+    model.addAttribute("categories", categoryService.findAllCategory());
+    return "allproducts";
+  }
+
+  @GetMapping("/index")
+  public String index(Model model) {
+    model.addAttribute("products", productService.findAllProduct());
+    model.addAttribute("categories", categoryService.findAllCategory());
+    return "index";
   }
 
   @GetMapping("products/new")
@@ -134,6 +150,7 @@ public class ProductController {
 
   }
 
+
   @GetMapping("/product/delete/{id}")
   @PreAuthorize("hasAnyRole('ROLE_SELLER', 'ROLE_ADMIN')")
   public String deleteProduct(@PathVariable("id") Long id) {
@@ -151,34 +168,35 @@ public class ProductController {
                               @RequestParam(name = "image") MultipartFile image,
                               @RequestParam(name = "category_id") Long categoryId, Model model) {
     Product product = productService.findOneById(id);
+    if (product!=null) {
+      if (image.getContentType().equals("image/jpeg") || image.getContentType().equals("image/jpg")) {
+        try {
+
+          String picName = DigestUtils.sha1Hex("image" + productname + "Picture");
+
+          byte[] bytes = image.getBytes();
+          Path path = Paths.get(uploadPath + picName + ".jpg");
+          Files.write(path, bytes);
+
+          product.setImage(picName);
+
+          product.setProductname(productname);
+          product.setPrice(price);
+          product.setDescription(description);
+          product.setStar(star);
 
 
-    if (image.getContentType().equals("image/jpeg") || image.getContentType().equals("image/jpg")) {
-      try {
+          productService.saveProduct(product);
 
-        String picName = DigestUtils.sha1Hex("image" + productname + "Picture");
+          return "redirect:/products";
 
-        byte[] bytes = image.getBytes();
-        Path path = Paths.get(uploadPath + picName + ".jpg");
-        Files.write(path, bytes);
-
-        product.setImage(picName);
-
-        product.setProductname(productname);
-        product.setPrice(price);
-        product.setDescription(description);
-        product.setStar(star);
-
-
-        productService.saveProduct(product);
-
-        return "redirect:/products";
-
-      } catch (Exception e) {
-        e.printStackTrace();
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
       }
-    }
 
-    return "redirect:/products";
+      return "redirect:/products";
+    }
+    return "redirect:/product?error";
   }
 }

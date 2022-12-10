@@ -8,11 +8,12 @@
 
 </head>
 <body>
+<div th:insert="navbar.html :: header"></div>
 
-<div class="card mb-3" style="max-width: 1200px;">
-    <div class="row g-0">
+<div class="container" style="margin-top: 100px;">
+    <div class="container" style="display: flex; flex-direction:row;">
         <div class="col-md-4" th:object="${product}">
-            <img th:src="@{'/img/'+${product.getImage()}}"  class="img-fluid rounded-start" alt="..." width="400px">
+            <img class="rounded float-end" alt="..." width="500px" th:src="@{'/img/'+${product.getImage()}}" >
         </div>
         <div class="col-md-8">
             <div class="card-body">
@@ -27,15 +28,14 @@
         </div>
     </div>
 </div>
-<!--              &lt;!&ndash; Комментарий &ndash;&gt;-->
+<!--&lt;!&ndash;              &lt;!&ndash; Комментарий &ndash;&gt;&ndash;&gt;-->
 <!--              <div>-->
 <!--                <div class="media-block">-->
 <!--                  <div class="media-body" th:each="comment: ${comments}">-->
-<!--                    <div class="mar-btm">-->
-<!--                      <a href="#" class="btn-link text-semibold media-heading box-inline">User 2</a>-->
-<!--                      <p class="text-muted text-sm"><i class="fa fa-mobile fa-lg"></i> date</p>-->
+<!--                    <div class="mar-btm" th:each="user: ${comment.getUser()}">-->
+<!--                      <a href="#" class="btn-link text-semibold media-heading box-inline" th:field="*{email}" th:text="${user.getEmail()}"></a>-->
 <!--                    </div>-->
-<!--                    <p>reply</p>-->
+<!--                    <p th:field="@{comment}" th:text="${comment.getComment()}"></p>-->
 <!--                    <div class="pad-ver">-->
 <!--                      <div class="btn-group">-->
 <!--                        <a class="btn btn-sm btn-default btn-hover-danger" href="#"><i class="fa fa-thumbs-down"></i></a>-->
@@ -226,49 +226,6 @@
 
 
 
-<footer class="py-5" style="background-color: rgb(241, 238, 238);">
-    <div class="row">
-        <div class="col-6 col-md-2 mb-3" style="margin-left: 50px;">
-            <h5 style="color:rgb(9, 9, 9)">SUPPORT</h5>
-            <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQS</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">TRACK ORDER</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">SHIPPING</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">ACCESSIBILITY</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">CONTACT US</a></li>
-            </ul>
-        </div>
-
-        <div class="col-6 col-md-2 mb-3">
-            <h5 style="color:rgb(9, 9, 9)">SKKN BY KIM</h5>
-            <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">ABOUT US</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">SUBSCRIPTIONS</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">TUTORIALS</a></li>
-            </ul>
-        </div>
-
-        <div class="col-6 col-md-2 mb-3">
-            <h5 style="color:rgb(9, 9, 9)">CONNECT</h5>
-            <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">INSTAGRAM</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FACEBOOK</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">TWITTER</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">YOUTUBE</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">TIKTOK</a></li>
-            </ul>
-        </div>
-
-        <div class="col-6 col-md-2 mb-3">
-            <ul class="nav flex-column">
-                <div style="display:inline-block; font-size: 20px;color:rgb(9, 9, 9) ">
-                    <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/>
-                    <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-                    </svg></div>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"></a></li>
-            </ul>
-        </div>
-
-</footer>
+<div th:insert="footer.html :: footer"></div>
 </body>
 </html>

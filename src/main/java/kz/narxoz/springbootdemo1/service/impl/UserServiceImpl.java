@@ -1,5 +1,6 @@
 package kz.narxoz.springbootdemo1.service.impl;
 
+import kz.narxoz.springbootdemo1.Entity.Product;
 import kz.narxoz.springbootdemo1.Model.User;
 import kz.narxoz.springbootdemo1.repository.UserRepository;
 import kz.narxoz.springbootdemo1.service.PermissionService;
@@ -12,6 +13,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import java.util.List;
+
 public class UserServiceImpl implements UserService {
 
   @Autowired
@@ -22,6 +25,12 @@ public class UserServiceImpl implements UserService {
 
   @Autowired
   private PermissionService permissionService;
+
+
+  @Override
+  public List<User> findOnebyId(Long id) {
+      return (List<User>) userRepository.findById(id).orElse(null);
+    }
 
   @Override
   public User getUserByEmail(String email) {
